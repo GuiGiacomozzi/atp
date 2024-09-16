@@ -14,10 +14,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         List<Financiamento> financiamentos = new ArrayList<Financiamento>();
 
-        financiamentos.add(new Casa(500000, 10, 10));
-        financiamentos.add(new Casa(500000, 10, 10));
-        financiamentos.add(new Apartamento(500000, 10, 10));
-        financiamentos.add(new Terreno(500000, 10, 10));
+        financiamentos.add(new Casa(500000, 10, 10, 70, 100));
+        financiamentos.add(new Casa(500000, 10, 10, 50, 65));
+        financiamentos.add(new Apartamento(500000, 10, 10, 2, 7));
+        financiamentos.add(new Terreno(500000, 10, 10, "Loja"));
 
         Double somaValorImovel = financiamentos.stream().mapToDouble(i -> i.getValorImovel()).sum();
         Double somaTotalPagamento = financiamentos.stream().mapToDouble(i -> i.getTotalPagamento()).sum();

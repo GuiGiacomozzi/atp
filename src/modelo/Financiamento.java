@@ -1,6 +1,6 @@
 package modelo;
 
-public class Financiamento {
+public abstract class Financiamento {
     protected double valorImovel;
     protected int prazoFinanciamento;
     protected double taxaJurosAnual;

@@ -1,11 +1,12 @@
 package modelo;
 
 public class Terreno extends Financiamento {
+    private String tipoDeZona;
 
-    public Terreno(double valorImovel, int prazoFinanciamento, double taxaJurosAnual) {
+    public Terreno(double valorImovel, int prazoFinanciamento, double taxaJurosAnual, String tipoDeZona) {
         super(valorImovel, prazoFinanciamento, taxaJurosAnual);
 
-        pagamentoMensal += (pagamentoMensal * 0.02);
+        this.tipoDeZona = tipoDeZona;
     }
 
     public double calcularPagamentoMensal() {
