@@ -5,16 +5,19 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.Apartamento;
+import modelo.Casa;
 import modelo.Financiamento;
+import modelo.Terreno;
 
 public class App {
     public static void main(String[] args) throws Exception {
         List<Financiamento> financiamentos = new ArrayList<Financiamento>();
 
-        financiamentos.add(new Financiamento(265000, 30, 4.21));
-        financiamentos.add(new Financiamento(329500, 26, 4.88));
-        financiamentos.add(new Financiamento(185000, 13, 5.21));
-        financiamentos.add(new Financiamento(582386, 40, 2.03));
+        financiamentos.add(new Casa(500000, 10, 10));
+        financiamentos.add(new Casa(500000, 10, 10));
+        financiamentos.add(new Apartamento(500000, 10, 10));
+        financiamentos.add(new Terreno(500000, 10, 10));
 
         Double somaValorImovel = financiamentos.stream().mapToDouble(i -> i.getValorImovel()).sum();
         Double somaTotalPagamento = financiamentos.stream().mapToDouble(i -> i.getTotalPagamento()).sum();
