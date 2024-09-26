@@ -12,6 +12,14 @@ public class Apartamento extends Financiamento {
         this.numeroAndar = numeroAndar;
     }
 
+    public int getVagasGaragem() {
+        return this.vagasGaragem;
+    }
+
+    public int getNumeroAndar() {
+        return this.numeroAndar;
+    }
+
     public double calcularPagamentoMensal() {
         double taxaJurosMensal = (this.taxaJurosAnual / 100) / 12;
 
@@ -19,7 +27,7 @@ public class Apartamento extends Financiamento {
 
         var taxaJurosMensalCalculo = 1 + taxaJurosMensal;
 
-        pagamentoMensal = (500000 * Math.pow(taxaJurosMensalCalculo, mesesFinanciamento))
+        pagamentoMensal = (this.valorImovel * Math.pow(taxaJurosMensalCalculo, mesesFinanciamento))
                 / (Math.pow(taxaJurosMensalCalculo, (mesesFinanciamento - 1)));
 
         return pagamentoMensal;

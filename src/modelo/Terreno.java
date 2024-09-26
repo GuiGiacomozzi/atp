@@ -9,6 +9,10 @@ public class Terreno extends Financiamento {
         this.tipoDeZona = tipoDeZona;
     }
 
+    public String getTipoDeZona() {
+        return this.tipoDeZona;
+    }
+
     public double calcularPagamentoMensal() {
         this.pagamentoMensal = super.calcularPagamentoMensal() + (super.getPagamentoMensal() * 0.02);
 

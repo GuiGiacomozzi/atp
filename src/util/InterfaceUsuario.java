@@ -8,78 +8,89 @@ public final class InterfaceUsuario {
     static Scanner scanner = new Scanner(System.in);
 
     public static double DigitarValorImovel() {
-        Double valorImovel;
-        do {
-            System.out.println("Digite o valor do imóvel: ");
-            String valorDigitado = scanner.nextLine();
+        Double valorImovel = 0d;
+        try {
+            do {
+                System.out.println("Digite o valor do imóvel: ");
+                String valorDigitado = scanner.nextLine();
 
-            valorImovel = Double.parseDouble(valorDigitado);
-        } while (!ValidarValorImovel(valorImovel));
+                valorImovel = Double.parseDouble(valorDigitado);
+            } while (!ValidarValorImovel(valorImovel));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            DigitarValorImovel();
+        }
 
         return valorImovel;
     }
 
     public static int DigitarPrazoFinanciamento() {
-        Integer prazoFinanciamento;
-        do {
-            System.out.println("Digite o prazo do financiamento, em anos: ");
-            String valorDigitado = scanner.nextLine();
+        Integer prazoFinanciamento = 0;
+        try {
+            do {
+                System.out.println("Digite o prazo do financiamento, em anos: ");
+                String valorDigitado = scanner.nextLine();
 
-            prazoFinanciamento = Integer.parseInt(valorDigitado);
-        } while (!ValidarPrazoFinanciamento(prazoFinanciamento));
+                prazoFinanciamento = Integer.parseInt(valorDigitado);
+            } while (!ValidarPrazoFinanciamento(prazoFinanciamento));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            DigitarPrazoFinanciamento();
+        }
 
         return prazoFinanciamento;
     }
 
     public static double DigitarTaxaJuros() {
-        Double taxaJuros;
-        do {
-            System.out.println("Digite taxa de juros: ");
-            String valorDigitado = scanner.nextLine();
+        Double taxaJuros = 0d;
+        try {
+            do {
+                System.out.println("Digite taxa de juros: ");
+                String valorDigitado = scanner.nextLine();
 
-            taxaJuros = Double.parseDouble(valorDigitado);
-        } while (!ValidarTaxaJuros(taxaJuros));
+                taxaJuros = Double.parseDouble(valorDigitado);
+            } while (!ValidarTaxaJuros(taxaJuros));
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            DigitarTaxaJuros();
+        }
 
         return taxaJuros;
     }
 
-    private static Boolean ValidarValorImovel(Double valorImovel) {
+    private static Boolean ValidarValorImovel(Double valorImovel) throws Exception {
         if (!ValidacaoHelpers.validarDouble(valorImovel)) {
-            System.out.println("Valor inválido!");
-            return false;
+            throw new ParametroInvalidoException("Valor de entrada inválido para valor do imóvel, tente novamente");
         }
 
         if (valorImovel < 5000) {
-            System.out.println("Valor do imóvel deve ser maior que R$ 5000");
-            return false;
+            throw new ValorImovelInvalidoException("Valor do imóvel deve ser maior que R$ 5000");
         }
 
         return true;
     }
 
-    private static Boolean ValidarPrazoFinanciamento(Integer prazoFinanciamento) {
+    private static Boolean ValidarPrazoFinanciamento(Integer prazoFinanciamento) throws Exception {
         if (!ValidacaoHelpers.validarInt(prazoFinanciamento)) {
-            System.out.println("Valor inválido!");
-            return false;
+            throw new ParametroInvalidoException(
+                    "Valor de entrada para prazo de financiamento inválido, tente novamente");
         }
 
         if (prazoFinanciamento < 2 || prazoFinanciamento > 40) {
-            System.out.println("Prazo do financiamento deve ser maior que 2 anos e menor que 40 anos.");
-            return false;
+            throw new PrazoFinanciamentoInvalidoException(
+                    "Prazo do financiamento deve ser maior que 2 anos e menor que 40 anos.");
         }
 
         return true;
     }
 
-    private static Boolean ValidarTaxaJuros(Double taxaJuros) {
+    private static Boolean ValidarTaxaJuros(Double taxaJuros) throws Exception {
         if (!ValidacaoHelpers.validarDouble(taxaJuros)) {
-            System.out.println("Valor inválido!");
-            return false;
+            throw new ParametroInvalidoException("Valor de entrada para taxa de juros inválido, tente novamente");
         }
 
         if (taxaJuros > 20) {
-            System.out.println("Taxa de juros deve ser menor que 20% por ano.");
-            return false;
+            throw new TaxaJurosInvalidoException("Taxa de juros deve ser menor que 20% por ano.");
         }
 
         return true;
