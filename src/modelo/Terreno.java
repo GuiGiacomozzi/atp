@@ -1,5 +1,7 @@
 package modelo;
 
+import helpers.ArquivoHelpers;
+
 public class Terreno extends Financiamento {
     private String tipoDeZona;
 
@@ -11,6 +13,18 @@ public class Terreno extends Financiamento {
 
     public String getTipoDeZona() {
         return this.tipoDeZona;
+    }
+
+    public String toString() {
+        var sb = new StringBuilder();
+
+        sb.append("Dados do financiamento de Terreno: ");
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append(super.toString());
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Tipo de zona: " + getTipoDeZona());
+
+        return sb.toString();
     }
 
     public double calcularPagamentoMensal() {

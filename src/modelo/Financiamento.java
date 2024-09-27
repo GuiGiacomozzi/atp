@@ -1,6 +1,9 @@
 package modelo;
 
-public abstract class Financiamento {
+import java.io.Serializable;
+import helpers.ArquivoHelpers;
+
+public abstract class Financiamento implements Serializable {
     protected double valorImovel;
     protected int prazoFinanciamento;
     protected double taxaJurosAnual;
@@ -40,10 +43,20 @@ public abstract class Financiamento {
 
     // #endregion
 
-    public void printInfoFinanciamento() {
-        System.out.println("Dados do financiamento: " +
-                "\n" + "- Pagamento mensal: R$ " + this.pagamentoMensal +
-                "\n" + "- Total pagamento: R$ " + this.totalPagamento);
+    public String toString() {
+        var sb = new StringBuilder();
+
+        sb.append("- Valor imovel: R$ " + getValorImovel());
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Prazo de financiamento: " + getPrazoFinanciamento() + " ano(s)");
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Taxa de juros anual: " + getTaxaJurosAnual() + "%");
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Pagamento mensal: R$ " + getPagamentoMensal());
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Total pagamento: R$ " + getTotalPagamento());
+
+        return sb.toString();
     }
 
     public double calcularPagamentoMensal() {

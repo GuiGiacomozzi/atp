@@ -1,5 +1,7 @@
 package modelo;
 
+import helpers.ArquivoHelpers;
+
 public class Apartamento extends Financiamento {
     private int vagasGaragem;
     private int numeroAndar;
@@ -18,6 +20,20 @@ public class Apartamento extends Financiamento {
 
     public int getNumeroAndar() {
         return this.numeroAndar;
+    }
+
+    public String toString() {
+        var sb = new StringBuilder();
+
+        sb.append("Dados do financiamento de Apartamento: ");
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append(super.toString());
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Vagas de garagem: " + getVagasGaragem() + " vaga(s)");
+        ArquivoHelpers.adicionarQuebraDeLinha(sb);
+        sb.append("- Número do andar: " + getNumeroAndar());
+
+        return sb.toString();
     }
 
     public double calcularPagamentoMensal() {
