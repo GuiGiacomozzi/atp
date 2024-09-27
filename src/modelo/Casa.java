@@ -2,7 +2,6 @@ package modelo;
 
 import helpers.ArquivoHelpers;
 import util.AcrescimoMaiorDoQueJurosException;
-import util.AreaConstruidaMaiorQueTerrenoException;
 
 public class Casa extends Financiamento {
     private int areaConstruida;
@@ -30,12 +29,10 @@ public class Casa extends Financiamento {
         try {
             this.pagamentoMensal = super.calcularPagamentoMensal() + valorAcrescimo;
             this.validarValorAcrescimo(valorJuros, valorAcrescimo);
-            this.validarAreaConstruida(this.areaConstruida, this.tamanhoTerreno);
         } catch (AcrescimoMaiorDoQueJurosException ex) {
             this.valorAcrescimo = valorJuros;
-        } catch (AreaConstruidaMaiorQueTerrenoException ex) {
-
         }
+
         return this.pagamentoMensal;
     }
 
@@ -48,7 +45,7 @@ public class Casa extends Financiamento {
         ArquivoHelpers.adicionarQuebraDeLinha(sb);
         sb.append("- Area construida: " + getAreaConstruida() + "m2");
         ArquivoHelpers.adicionarQuebraDeLinha(sb);
-        sb.append("- Tamanho do terreno: " + getAreaConstruida() + "m2");
+        sb.append("- Tamanho do terreno: " + getTamanhoTerreno() + "m2");
 
         return sb.toString();
     }
@@ -58,13 +55,6 @@ public class Casa extends Financiamento {
         if (valorJuros < valorAcrescimo) {
             throw new AcrescimoMaiorDoQueJurosException(
                     "Valor do juros não pode ser maior do que o valor do acréscimo!");
-        }
-    }
-
-    private void validarAreaConstruida(int areaConstruida, int tamanhoTerreno)
-            throws AreaConstruidaMaiorQueTerrenoException {
-        if (areaConstruida > tamanhoTerreno) {
-            throw new AreaConstruidaMaiorQueTerrenoException("Área construída não pode ser maior que o terreno!");
         }
     }
 }

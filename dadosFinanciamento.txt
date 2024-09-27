@@ -1,35 +1,35 @@
 Dados do financiamento de Casa: 
-- Valor imovel: R$ 500000.0
-- Prazo de financiamento: 10 ano(s)
-- Taxa de juros anual: 10.0%
-- Pagamento mensal: R$ 4281.388888888889
-- Total pagamento: R$ 513766.6666666667
+- Valor imovel: R$ 600000.0
+- Prazo de financiamento: 30 ano(s)
+- Taxa de juros anual: 5.0%
+- Pagamento mensal: R$ 1753.611111111111
+- Total pagamento: R$ 631300.0
 - Area construida: 70m2
-- Tamanho do terreno: 70m2
+- Tamanho do terreno: 100m2
 
 Dados do financiamento de Casa: 
-- Valor imovel: R$ 500000.0
-- Prazo de financiamento: 10 ano(s)
-- Taxa de juros anual: 10.0%
-- Pagamento mensal: R$ 4281.388888888889
-- Total pagamento: R$ 513766.6666666667
+- Valor imovel: R$ 3500000.0
+- Prazo de financiamento: 39 ano(s)
+- Taxa de juros anual: 3.25%
+- Pagamento mensal: R$ 7578.887108262108
+- Total pagamento: R$ 3546919.166666666
 - Area construida: 50m2
-- Tamanho do terreno: 50m2
+- Tamanho do terreno: 65m2
 
 Dados do financiamento de Apartamento: 
-- Valor imovel: R$ 500000.0
-- Prazo de financiamento: 10 ano(s)
-- Taxa de juros anual: 10.0%
-- Pagamento mensal: R$ 504166.6666666666
-- Total pagamento: R$ 6.049999999999999E7
+- Valor imovel: R$ 263000.0
+- Prazo de financiamento: 25 ano(s)
+- Taxa de juros anual: 8.0%
+- Pagamento mensal: R$ 264753.3333333333
+- Total pagamento: R$ 7.9426E7
 - Vagas de garagem: 2 vaga(s)
-- Número do andar: 7
+- Numero do andar: 7
 
 Dados do financiamento de Terreno: 
-- Valor imovel: R$ 500000.0
-- Prazo de financiamento: 10 ano(s)
-- Taxa de juros anual: 10.0%
-- Pagamento mensal: R$ 4285.416666666666
-- Total pagamento: R$ 514249.9999999999
+- Valor imovel: R$ 5500000.0
+- Prazo de financiamento: 30 ano(s)
+- Taxa de juros anual: 2.87%
+- Pagamento mensal: R$ 15620.603472222221
+- Total pagamento: R$ 5623417.25
 - Tipo de zona: Loja
 

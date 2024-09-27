@@ -31,7 +31,7 @@ public class Apartamento extends Financiamento {
         ArquivoHelpers.adicionarQuebraDeLinha(sb);
         sb.append("- Vagas de garagem: " + getVagasGaragem() + " vaga(s)");
         ArquivoHelpers.adicionarQuebraDeLinha(sb);
-        sb.append("- Número do andar: " + getNumeroAndar());
+        sb.append("- Numero do andar: " + getNumeroAndar());
 
         return sb.toString();
     }

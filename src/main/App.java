@@ -12,10 +12,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         List<Financiamento> financiamentos = new ArrayList<Financiamento>();
 
-        financiamentos.add(new Casa(500000, 10, 10, 70, 100));
-        financiamentos.add(new Casa(500000, 10, 10, 50, 65));
-        financiamentos.add(new Apartamento(500000, 10, 10, 2, 7));
-        financiamentos.add(new Terreno(500000, 10, 10, "Loja"));
+        financiamentos.add(new Casa(600000, 30, 5, 70, 100));
+        financiamentos.add(new Casa(3500000, 39, 3.25, 50, 65));
+        financiamentos.add(new Apartamento(263000, 25, 8, 2, 7));
+        financiamentos.add(new Terreno(5500000, 30, 2.87, "Loja"));
 
         var sb = new StringBuilder();
 
